@@ -61,3 +61,7 @@ ruby source in the first place.
 In the spirit of making things simplier I am going to forget the link to the
 Octokit docs for now. Knowing the method name is good enough since it is easily
 searchable.
+
+Now, what we're looking to get from the source files seems very simple. A URL
+and a method name. Now we know what we have and what we want it is time to whip
+up some tests and get the data we want.
