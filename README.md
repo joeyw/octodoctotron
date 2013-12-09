@@ -12,3 +12,8 @@ Octokit is well documented, but the GitHub API docs are sexy and I'd rather look
 through them. Does that make me shallow? Maybe, octobiteme. Octokit's docs
 already links to the offical API docs so we need to just reverse them.
 
+## Hacking on fuzzy-octo-happiness
+
+Clone the project then run:
+
+	script/bootstrap
