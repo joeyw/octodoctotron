@@ -37,3 +37,13 @@ all my problems. All the methods include links that will easily be able to be
 picked up with javascript. With the link and method name we will be able to
 easily inject some html of our own with the method name linked back to the
 Octokit documentation.
+
+CHAPTER III
+--------------------------------------------------------------------------------
+
+With last chapters thoughts in mind it is time to start exploring them with a
+little bit of code. I've added some skeleton to the project to get things
+rolling. For now I am going to kick the tires in ruby and see what we can come
+up with. I am going to use the `gem content` command to get a list of all the
+octokit source files then explore a few searching options here on the `method-
+and-url-searcher` branch.
