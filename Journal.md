@@ -20,3 +20,20 @@ even taking the swanky name fuzzy-octo-happiness suggested after several
 refreshes. A quick gitub search shows five other projects elected for the same
 name. Lettuce see if we can make the name mean something more than just empty
 test repos.
+
+CHAPTER II
+--------------------------------------------------------------------------------
+
+I've spent a little while thinking about how this could work. We have the
+Octokit source code full of comments above their methods that include links to
+the API docs that the method accesses. The first thing that comes to mind is
+coming up with some sort of search method to get the link and the method name
+associated. Maybe sometihng simple like a search for the api url then take the
+next defined method name to link them. This is going to be the first thing I
+explore with code.
+
+On the API docs side of things I am thinking of some magical javascript to solve
+all my problems. All the methods include links that will easily be able to be
+picked up with javascript. With the link and method name we will be able to
+easily inject some html of our own with the method name linked back to the
+Octokit documentation.
