@@ -17,3 +17,9 @@ already links to the offical API docs so we need to just reverse them.
 Clone the project then run:
 
 	script/bootstrap
+
+To run tests run:
+
+	script/test
+
+Ruby 2.0.0 is being used.
