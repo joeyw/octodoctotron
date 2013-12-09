@@ -9,8 +9,7 @@ method names in the GitHub API docs that link to their respective Octokit
 methods.
 
 Octokit is well documented, but the GitHub API docs are sexy and I'd rather look
-through them. Does that make me shallow? Maybe, octobiteme. Octokit's docs
-already links to the offical API docs so we need to just reverse them.
+through them. Does that make me shallow? Maybe, octobiteme.
 
 ## Hacking on fuzzy-octo-happiness
 
