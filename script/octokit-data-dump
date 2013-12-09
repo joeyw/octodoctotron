@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+def octokit_source_files
+  `gem content octokit`.split("\n").
+    select { |filepath| filepath[-3..-1] == ".rb" }
+end
+
+puts File.read octokit_source_files[15]

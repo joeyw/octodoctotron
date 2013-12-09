@@ -47,3 +47,13 @@ rolling. For now I am going to kick the tires in ruby and see what we can come
 up with. I am going to use the `gem content` command to get a list of all the
 octokit source files then explore a few searching options here on the `method-
 and-url-searcher` branch.
+
+I am working on searching/parsing the Octokit source files and now realizing the
+links to the Octokit docs will have to be parsed separately after being
+generated. In which case it might be easier to just parse the Octokit docs to
+get all the data at once. After peeking at the generated docs html I am going to
+put that approach in the back of my mind. After that quick look that approach
+looks pretty daunting and would be over complicated but I could see it working.
+For now I am going to focus on something much simplier by keeping at the source.
+I should be able to trivially generate the urls myself since they come from the
+ruby source in the first place.
