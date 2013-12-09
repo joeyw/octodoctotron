@@ -57,3 +57,7 @@ looks pretty daunting and would be over complicated but I could see it working.
 For now I am going to focus on something much simplier by keeping at the source.
 I should be able to trivially generate the urls myself since they come from the
 ruby source in the first place.
+
+In the spirit of making things simplier I am going to forget the link to the
+Octokit docs for now. Knowing the method name is good enough since it is easily
+searchable.
