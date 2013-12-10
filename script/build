@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'uglifier'
+
+system 'script/bootstrap'
+
+puts "===> Building DocInjector bookmarklet"
+output = Uglifier.compile File.read "src/doc_injector.js"
+
+puts "===> Copying bookmarklet to cliboard"
+system "echo "#{output}" | pbcopy"
+
+puts "===> Writing to build/doc_injector.bookmarket.js"
+File.write 'build/doc_injector.bookmarklet.js', output

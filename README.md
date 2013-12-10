@@ -13,6 +13,8 @@ through them. Does that make me shallow? Maybe, octobiteme.
 
 ## Hacking on fuzzy-octo-happiness
 
+Ruby 2.0.0 is being used.
+
 Clone the project then run:
 
 	script/bootstrap
@@ -21,4 +23,6 @@ To run tests run:
 
 	script/test
 
-Ruby 2.0.0 is being used.
+To build javascript bookmarklet:
+
+	script/build

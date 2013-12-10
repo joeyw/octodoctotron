@@ -2,17 +2,23 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.5)
+    execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    json (1.8.1)
     multipart-post (1.2.0)
     octokit (2.6.3)
       sawyer (~> 0.5.1)
     sawyer (0.5.1)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
+    uglifier (2.3.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   octokit
+  uglifier
