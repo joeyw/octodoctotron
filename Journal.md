@@ -133,3 +133,5 @@ now. Well, almost completed. I need to make a script for the extractor that
 outputs the json result from the process then use that data in the build script
 to inject the extracted data. Right now it is hardcoded just for the single meta
 method.
+
+I thought copying to clibboard was neat but it broke so I removed it.
