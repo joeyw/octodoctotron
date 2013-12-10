@@ -11,6 +11,9 @@ methods.
 Octokit is well documented, but the GitHub API docs are sexy and I'd rather look
 through them. Does that make me shallow? Maybe, octobiteme.
 
+![GitHub API docs before](/build/screenshots/api-docs-before.png?raw=true)
+![GitHub API docs after](/build/screenshots/api-docs-after.png?raw=true)
+
 ## Hacking on fuzzy-octo-happiness
 
 Ruby 2.0.0 is being used.
