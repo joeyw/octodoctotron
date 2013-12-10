@@ -72,3 +72,64 @@ It is quite horrible but a starting place at least. Extracting data is pretty
 tricky it seems. I am trying to avoid regex where possible. Looking at several
 different source files I am seeing a lot of edge cases I didn't think of when I
 first imagined how this would work.
+
+CHAPTER IV
+================================================================================
+
+Now that I have a basic idea of the data we will be getting from the extractor,
+I am going to tinker with the API docs side of things where we'll be using that
+extracted data and injecting it into the pages.
+
+Here is the data were currently working with:
+
+```json
+[{
+	"api_url": "http://developer.github.com/v3/meta/#meta",
+	"method_name":"meta"
+}]
+```
+
+The API docs graciously provide easily accessible anchors for each API endpoint.
+
+```html
+<h1 id="meta">
+	<a class="header-anchor" href="#meta">::before</a>Meta
+</h1>
+```
+
+Since the Octokit team has been diligent in the docs about including specific
+links to each anchor id on the docs pages we can simply get id from the url and
+use it to inject our html directly below the docs header for that endpoint.
+
+Now that I've played with the docs a small bit, this is what I've come up for
+inserting the method name:
+
+```javascript
+$('#meta').after('
+	<div>
+		<code>Octokit.rb: <a href="#" target="_blank">Octokit#meta</a></code>
+	</div>
+');
+ ```
+
+Linking to the Octokit docs is on the backburner at the moment so we'll have to
+add it later.
+
+I've just completed a [basic injector the the API docs][1]. I like it. I am
+likely going to change the data structure being returning from the extractor to
+make using it a little bit nicer but that isn't a high priority right now.
+
+[1]: https://github.com/joeyw/fuzzy-octo-happiness/commit/93e2ebe6e77256e9102019
+
+Now I am going to make a small build script that turns the injector code into a
+bookmarklet for now, depending on how this all goes I'll likely throw it in a 
+chrome extension just to be fancy.
+
+Apparently you can't paste a javascript url into the chrome address bar. Fun
+stuff.
+
+Just completed the small build script for the injector, it should be enough for
+now. Well, almost completed. I need to make a script for the extractor that
+outputs the json result from the process then use that data in the build script
+to inject the extracted data. Right now it is hardcoded just for the single meta
+method.
