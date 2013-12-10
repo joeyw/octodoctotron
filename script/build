@@ -1,11 +1,31 @@
 #!/usr/bin/env ruby
 
+require 'json'
+require 'erb'
 require 'uglifier'
+require './lib/octo_extractor'
 
 system 'script/bootstrap'
 
-puts "===> Building DocInjector bookmarklet"
-output = Uglifier.compile File.read "src/doc_injector.js"
+puts "===> Extracting data from Octokit.rb to build/data.json"
+Proc.new do
+	filepath = OctoExtractor.octokit_ruby_source_filepaths.select { |filepath| 
+		filepath.include? "lib/octokit/client/meta.rb"
+	}.first
 
-puts "===> Writing to build/doc_injector.bookmarket.js"
-File.write 'build/doc_injector.bookmarklet.js', output
+	File.write "build/data.json", OctoExtractor.process(filepath).to_json
+end.call
+
+puts "===> Building doc_injector.js"
+Proc.new do
+	@data = File.read 'build/data.json'
+	template_string = File.read 'src/doc_injector.js.erb'
+	template = ERB.new template_string
+	doc_injector_src = template.result
+	File.write "build/doc_injector.js", doc_injector_src
+
+puts "===> Building doc_injector.bookmarklet.js"
+
+	bookmarklet_src = Uglifier.compile doc_injector_src
+	File.write 'build/doc_injector.bookmarklet.js', bookmarklet_src
+end.call

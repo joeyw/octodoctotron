@@ -5,10 +5,7 @@ var DocInjector = {
 			that.inject(docReference)
 		});
 	},
-	data: [{
-		"api_url": "http://developer.github.com/v3/meta/#meta",
-		"method_name":"meta"
-	}],
+	data: <%= @data %>,
 	inject: function(docReference) {
 		var anchor = docReference.api_url.split("#");
 		if(window.location.href !== anchor[0]) return;
