@@ -148,3 +148,10 @@ Octokit.rb, then uses it to generate the client side code and bookmarklet.
 
 Now we need the actual parser to not completely suck. Right now it is very
 flakey.
+
+CHAPTER VI
+================================================================================
+
+This is a short chapter. All I report is that I am seriously considering the
+name OctoDoctoTron. Maybe OctoDoctoBot. Something along those lines at least.
+Hmmm d hmmm hummm.
