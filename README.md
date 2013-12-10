@@ -31,3 +31,8 @@ To run tests run:
 To build javascript bookmarklet:
 
 	script/build
+
+## How it's made
+
+I started this project with a [journal](Journal.md) to keep track of my thoughts
+and progress. Neat.
