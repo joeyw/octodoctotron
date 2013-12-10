@@ -135,3 +135,10 @@ to inject the extracted data. Right now it is hardcoded just for the single meta
 method.
 
 I thought copying to clibboard was neat but it broke so I removed it.
+
+CHAPTER V
+================================================================================
+
+Were on our way now. We have a working basic prototype. The data is still
+provided manually to the bookmarklet but that is about to change. We're going to
+modify the build script to insert the extracted data into the bookmarklet.
