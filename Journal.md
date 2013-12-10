@@ -142,3 +142,9 @@ CHAPTER V
 Were on our way now. We have a working basic prototype. The data is still
 provided manually to the bookmarklet but that is about to change. We're going to
 modify the build script to insert the extracted data into the bookmarklet.
+
+I just finished adding to the build script. It now extracts the data from
+Octokit.rb, then uses it to generate the client side code and bookmarklet.
+
+Now we need the actual parser to not completely suck. Right now it is very
+flakey.
