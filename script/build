@@ -9,7 +9,7 @@ system 'script/bootstrap'
 
 puts "===> Extracting data from Octokit.rb to build/data.json"
 Proc.new do
-	filepath = OctoExtractor.octokit_ruby_source_filepaths.select { |filepath| 
+	filepath = OctoExtractor.filepaths.select { |filepath| 
 		filepath.include? "lib/octokit/client/meta.rb"
 	}.first
 

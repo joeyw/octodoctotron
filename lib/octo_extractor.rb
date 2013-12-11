@@ -5,7 +5,7 @@ module OctoExtractor
     #   version.
     #
     # @return [Array<String>] List of Octokit source ruby filepaths
-    def octokit_ruby_source_filepaths
+    def filepaths
       `gem content octokit`.split("\n").
         select { |filepath| filepath[-3..-1] == ".rb" }
     end
