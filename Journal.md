@@ -155,3 +155,10 @@ CHAPTER VI
 This is a short chapter. All I report is that I am seriously considering the
 name OctoDoctoTron. Maybe OctoDoctoBot. Something along those lines at least.
 Hmmm d hmmm hummm.
+
+CHAPTER VII
+================================================================================
+
+Back to getting stuff done. Instead of making fixtures for the source files for
+the tests I am going to test directly against the octokit files. The thinking 
+behind it is that I can tell when stuff breaks when octokit changes.
