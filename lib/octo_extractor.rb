@@ -66,7 +66,9 @@ module OctoExtractor
             method_name = method_name.split("(")[0]
           end
 
-          data.push({ api_url: last_url, method_name: method_name })
+          if !last_url.nil?
+            data.push({ api_url: last_url, method_name: method_name })
+          end
           last_url = nil
           method_name = nil
         end

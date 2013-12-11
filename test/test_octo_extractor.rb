@@ -32,6 +32,11 @@ class TestOctoExtractor < Test::Unit::TestCase
     assert_equal expected_data, data
   end
 
+  def test_exclude_methods_without_documented_urls
+    data = OctoExtractor.process get_source_file('client/users.rb')
+    assert data.select { |entry| entry[:api_url].nil? }.empty?
+  end
+
   private
 
   def get_source_file(file_name)
