@@ -49,6 +49,7 @@ module OctoExtractor
     # @param filepath [String] Path to an Octokit ruby source file.
     # @return [Array<Hash>] list of relations with :api_url and :method_name.
     def process(filepath)
+      data = []
       last_url = nil
       method_name = nil
 
@@ -64,13 +65,13 @@ module OctoExtractor
           if method_name.include?("(")
             method_name = method_name.split("(")[0]
           end
+
+          data.push({ api_url: last_url, method_name: method_name })
+          last_url = nil
+          method_name = nil
         end
       end
-
-      [{
-        api_url: last_url,
-        method_name: method_name
-      }]
+      data
     end
 
   end
