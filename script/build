@@ -9,11 +9,11 @@ system 'script/bootstrap'
 
 puts "===> Extracting data from Octokit.rb to build/data.json"
 Proc.new do
-	filepath = OctoExtractor.filepaths.select { |filepath| 
-		filepath.include? "lib/octokit/client/meta.rb"
-	}.first
-
-	File.write "build/data.json", OctoExtractor.process(filepath).to_json
+	data = []
+	OctoExtractor.filepaths.each do |filepath|
+		data.concat OctoExtractor.process filepath
+	end
+	File.write "build/data.json", data.to_json
 end.call
 
 puts "===> Building doc_injector.js"
