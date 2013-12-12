@@ -67,7 +67,7 @@ module OctoExtractor
           end
 
           if !last_url.nil?
-            data.push({ api_url: last_url, method_name: method_name })
+            data.push({ selector: "##{last_url.split('#')[1]}", method_name: method_name })
           end
           last_url = nil
           method_name = nil

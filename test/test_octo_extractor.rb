@@ -12,7 +12,7 @@ class TestOctoExtractor < Test::Unit::TestCase
 
   def test_extact_api_url_and_method_name_from_simple_source
     expected_data = [{
-      api_url: 'http://developer.github.com/v3/meta/#meta',
+      selector: '#meta',
       method_name: 'meta'
     }]
     data = OctoExtractor.process get_source_file('client/meta.rb')
@@ -21,10 +21,10 @@ class TestOctoExtractor < Test::Unit::TestCase
 
   def test_extracts_multiple_url_connections
     expected_data = [{
-      api_url: 'http://developer.github.com/v3/repos/statuses/#list-statuses-for-a-specific-ref',
+      selector: '#list-statuses-for-a-specific-ref',
       method_name: 'statuses'
     }, {
-      api_url: 'http://developer.github.com/v3/repos/statuses/#create-a-status',
+      selector: '#create-a-status',
       method_name: 'create_status'
     }]
 
@@ -34,7 +34,7 @@ class TestOctoExtractor < Test::Unit::TestCase
 
   def test_exclude_methods_without_documented_urls
     data = OctoExtractor.process get_source_file('client/users.rb')
-    assert data.select { |entry| entry[:api_url].nil? }.empty?
+    assert data.select { |entry| entry[:selector].nil? }.empty?
   end
 
   def test_exclude_urls_without_hashes

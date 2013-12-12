@@ -7,10 +7,8 @@ var DocInjector = {
 	},
 	data: <%= @data %>,
 	inject: function(docReference) {
-		var anchor = docReference.api_url.split("#");
-		if(window.location.href !== anchor[0]) return;
 		var html = '<div><code>Octokit.rb: <a href="#" target="_blank">Octokit#' + docReference.method_name + '</a></code></div>';
-		$('#' + anchor[1]).after(html);
+		$(docReference.selector).after(html);
 	}
 };
 
