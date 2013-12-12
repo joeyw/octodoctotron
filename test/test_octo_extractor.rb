@@ -37,6 +37,11 @@ class TestOctoExtractor < Test::Unit::TestCase
     assert data.select { |entry| entry[:api_url].nil? }.empty?
   end
 
+  def test_exclude_urls_without_hashes
+    data = OctoExtractor.process get_source_file('octokit/client.rb')
+    assert data.empty?
+  end
+
   private
 
   def get_source_file(file_name)

@@ -57,7 +57,7 @@ module OctoExtractor
         url = line.split(" ")
           .select { |string| string =~ /developer\.github/ }
           .first
-        last_url = url if !url.nil? && !url.empty?
+        last_url = url if !url.nil? && !url.empty? && url.include?("#")
 
         if line.include? "def "
           line_words = line.split(" ")
