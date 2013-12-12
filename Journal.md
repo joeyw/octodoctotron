@@ -162,3 +162,16 @@ CHAPTER VII
 Back to getting stuff done. Instead of making fixtures for the source files for
 the tests I am going to test directly against the octokit files. The thinking 
 behind it is that I can tell when stuff breaks when octokit changes.
+
+With the parser improved, most of the api docs to octokit docs are working. This
+project might not be important or exciting to anyone else besides me, but for 
+me right now, I just needed to build something. I gave up on a lot of projects
+in the past that I started out excited about but eventually started having
+doubts about it. I've had these same doubts about this project. But making stuff
+has been enough reason to keep going, for that good feeling of satisfaction of
+making this humble little computer do something. Going to the api docs and
+clicking that bookmarklet to see the octokit methods appear is simple, but oh so
+satisfying. I haven't made anything in a long time and that alone makes this
+project important to me regardless of how much of an impact the project itself
+has on anyone else. For now I am going back to work to fix a few quirks I have
+on my mind.
