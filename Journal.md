@@ -175,3 +175,10 @@ satisfying. I haven't made anything in a long time and that alone makes this
 project important to me regardless of how much of an impact the project itself
 has on anyone else. For now I am going back to work to fix a few quirks I have
 on my mind.
+
+CHAPTER VIII
+================================================================================
+
+I finally got tired of doing a lot of copy/pasting with the bookmarklet and
+added the necessary files to load the injector as a chrome extension. Now is
+also the time to change the name to octodoctotron. See you on the other side.
