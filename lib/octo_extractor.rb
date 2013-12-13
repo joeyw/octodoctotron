@@ -42,7 +42,7 @@ module OctoExtractor
     # Output
     #
     # => [{
-    #      api_url: "http://developer.github.com/v3/meta/#meta",
+    #      selectors: ["#meta"],
     #      method_name: "meta"
     #    }]
     #
