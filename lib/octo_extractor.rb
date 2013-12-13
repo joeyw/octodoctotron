@@ -50,14 +50,14 @@ module OctoExtractor
     # @return [Array<Hash>] list of relations with :api_url and :method_name.
     def process(filepath)
       data = []
-      last_url = nil
+      urls = []
       method_name = nil
 
       File.read(filepath).each_line do |line|
         url = line.split(" ")
           .select { |string| string =~ /developer\.github/ }
           .first
-        last_url = url if !url.nil? && !url.empty? && url.include?("#")
+        urls.push url if !url.nil? && !url.empty? && url.include?("#")
 
         if line.include? "def "
           line_words = line.split(" ")
@@ -66,10 +66,11 @@ module OctoExtractor
             method_name = method_name.split("(")[0]
           end
 
-          if !last_url.nil?
-            data.push({ selector: "##{last_url.split('#')[1]}", method_name: method_name })
+          if !urls.empty?
+            urls.map! { |url| "##{url.split('#')[1]}" }
+            data.push({ selectors: urls, method_name: method_name })
           end
-          last_url = nil
+          urls = []
           method_name = nil
         end
       end
