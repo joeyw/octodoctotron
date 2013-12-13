@@ -68,13 +68,37 @@ module OctoExtractor
 
           if !urls.empty?
             urls.map! { |url| "##{url.split('#')[1]}" }
-            data.push({ selectors: urls, method_name: method_name })
+            data.push({ 
+              selectors: urls, 
+              method_name: method_name,
+              octokit_doc_url: octokit_doc_path(filepath, method_name)
+            })
           end
           urls = []
           method_name = nil
         end
       end
       data
+    end
+
+    # Scrap together a url for the octokit docs
+    #
+    # Input:
+    #   filepath: '....octokit-2.6.3/lib/octokit/client/users.rb'
+    #   method_name: 'user_authenticated?'
+    #
+    # Output:
+    #   Octokit/Authentication.html#user_authenticated?-instance_method
+    #
+    # @param filepath [String] source file path for the method we are linking
+    # @param method_name [String] method name we are linking
+    # @return [String] relative path to method in octokit yard docs
+    def octokit_doc_path(filepath, method_name)
+      base = filepath[filepath.index('lib/octokit')+4..-1].gsub(/\.rb/, '')
+        .split('/')
+        .map { |name| name.split("_").each(&:capitalize!).join }
+        .join('/')
+      "#{base}.html##{method_name}-instance_method"
     end
 
   end
