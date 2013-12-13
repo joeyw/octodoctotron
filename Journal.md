@@ -221,3 +221,20 @@ So close now, the major things I wanted to be ready for intial release are done.
 There is still a minor parser bug that is including method that doesn't relate
 to an actual api method so that will need to be fixed and then I do believe this
 will be ready to be shared with those that will look at it.
+
+CHAPTER X
+================================================================================
+
+What a fun little side project this has turned into over the past week. From
+inception on Monday to its pending initial public release here on Friday. The
+code may not be the most beautiful, but it works and I am not going to get hung
+up trying to impress anyone. I took a long break from any kind of programming
+which hurt me dearly I think, but now it is time to press on. As I start working
+again I think my code will naturally improve as I am challenged to think about
+new problems and challenges. If you're reading this I hope you've enjoyed it. I
+haven't done any editting on this journal or even reread it entirely since I've 
+written it. I've reread small pieces where I left off but that is it. Apologies
+if doesn't make any sense at all, it really was most of my thoughts as I worked.
+Not everything made it in, but hopefully enough did to keep you interested.
+Thats all for now, it is time to push this last entry and flip the open source
+switch on GitHub. Thanks for reading.
