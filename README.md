@@ -32,17 +32,22 @@ Visit [developer.github.com](http://developer.github.com) and enjoy.
 
 ## Hacking on octodoctotron
 
-Ruby 2.0.0 is being used.
+Two parts ruby to one part javascript. The data for octodoctotron is extracted
+directly from the Octokit.rb source code. Ruby 2.0.0 is being used. The javascript
+part is a simple chrome extension that uses the data we extract to inject the
+names of Octokit methods and the links to their docs.
 
 Clone the project then run:
 
 	script/bootstrap
 
-To run tests run:
+Tests are included for the ruby parts. They test directly against the code of
+the latest Octokit gem. Run them with:
 
 	script/test
 
-To build run:
+The build command will extract the doc data from Octokit.rb and compile that
+into the chrome extension. To build simple run:
 
 	script/build
 
