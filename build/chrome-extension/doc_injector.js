@@ -1,7 +1,9 @@
 var DocInjector = {
 	init: function() {
 		if (window.location.pathname === "/") return;
-		if (window.location.pathname === "/changes/") return;
+		if (window.location.pathname.slice(0, 9) === "/changes/") return;
+		if (window.location.pathname.slice(0, 8) === "/guides/") return;
+		if (window.location.pathname.slice(0, 11) === "/libraries/") return;
 		var that = this;
 		$.each(this.data, function(i, docReference) {
 			that.inject(docReference)
