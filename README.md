@@ -28,7 +28,7 @@ Enable developer mode.
 
 Click load unpacked extension, point to `octodoctotron/build/chrome-extension`.
 
-Visit [developer.github.com](developer.github.com) and enjoy.
+Visit [developer.github.com](http://developer.github.com) and enjoy.
 
 ## Hacking on octodoctotron
 
