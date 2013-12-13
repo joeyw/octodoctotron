@@ -47,7 +47,7 @@ module OctoExtractor
     #    }]
     #
     # @param filepath [String] Path to an Octokit ruby source file.
-    # @return [Array<Hash>] list of relations with :api_url and :method_name.
+    # @return [Array<Hash>] list of relations with :selectors and :method_name.
     def process(filepath)
       data = []
       urls = []
