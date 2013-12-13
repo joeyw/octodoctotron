@@ -23,6 +23,7 @@ Proc.new do
 	template = ERB.new template_string
 	doc_injector_src = template.result
 	File.write "build/doc_injector.js", doc_injector_src
+	File.write "build/chrome-extension/doc_injector.js", doc_injector_src
 
 puts "===> Building doc_injector.bookmarklet.js"
 

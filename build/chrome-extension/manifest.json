@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "octodoctotron",
+  "description": "Inject Octokit.rb method names into developer.github.com",
+  "version": "1.0",
+  "content_scripts": [{ 
+		"matches": ["http://developer.github.com/*"],
+		"js": ["jquery.js", "doc_injector.js"]
+	}],
+	"web_accessible_resources": [
+		"jquery-2.0.3.min.map",
+		"doc_injector.js"
+	]
+}
