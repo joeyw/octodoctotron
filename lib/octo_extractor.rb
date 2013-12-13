@@ -1,3 +1,5 @@
+require 'uri'
+
 module OctoExtractor
   class << self
 
@@ -67,11 +69,11 @@ module OctoExtractor
           end
 
           if !urls.empty?
-            urls.map! { |url| "##{url.split('#')[1]}" }
             data.push({ 
-              selectors: urls, 
+              selectors: urls.map { |url| "##{url.split('#')[1]}" },
               method_name: method_name,
-              octokit_doc_url: octokit_doc_path(filepath, method_name)
+              octokit_doc_url: octokit_doc_path(filepath, method_name),
+              doc_paths: urls.map { |url| URI.parse(url).path }
             })
           end
           urls = []
