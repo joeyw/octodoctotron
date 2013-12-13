@@ -7,7 +7,8 @@ var DocInjector = {
 	},
 	data: <%= @data %>,
 	inject: function(docReference) {
-		var html = '<div><code>Octokit.rb: <a href="#" target="_blank">Octokit#' + docReference.method_name + '</a></code></div>';
+		var docBaseUrl = 'http://octokit.github.io/octokit.rb/';
+		var html = '<div><code>Octokit.rb: <a href="' + docBaseUrl + docReference.octokit_doc_url + '" target="_blank">Octokit#' + docReference.method_name + '</a></code></div>';
 		$.each(docReference.selectors, function(i, selector) {
 			$(selector).after(html);
 		})

@@ -13,7 +13,8 @@ class TestOctoExtractor < Test::Unit::TestCase
   def test_extact_api_url_and_method_name_from_simple_source
     expected_data = [{
       selectors: ['#meta'],
-      method_name: 'meta'
+      method_name: 'meta',
+      octokit_doc_url: 'Octokit/Client/Meta.html#meta-instance_method'
     }]
     data = OctoExtractor.process get_source_file('client/meta.rb')
     assert_equal expected_data, data
@@ -22,10 +23,12 @@ class TestOctoExtractor < Test::Unit::TestCase
   def test_extracts_multiple_url_connections
     expected_data = [{
       selectors: ['#list-statuses-for-a-specific-ref'],
-      method_name: 'statuses'
+      method_name: 'statuses',
+      :octokit_doc_url => "Octokit/Client/Statuses.html#statuses-instance_method"
     }, {
       selectors: ['#create-a-status'],
-      method_name: 'create_status'
+      method_name: 'create_status',
+      :octokit_doc_url => "Octokit/Client/Statuses.html#create_status-instance_method"
     }]
 
     data = OctoExtractor.process get_source_file('client/statuses.rb')
@@ -48,6 +51,13 @@ class TestOctoExtractor < Test::Unit::TestCase
     assert_equal 2, user[:selectors].length
     assert user[:selectors].index('#get-a-single-user')
     assert user[:selectors].index('#get-the-authenticated-user')
+  end
+
+  def test_octokit_doc_path
+    path = OctoExtractor.octokit_doc_path('lib/octokit/client/users.rb', 'user')
+    another_path = OctoExtractor.octokit_doc_path('lib/octokit/client/rate_limit.rb', 'rate_limit_remaining')
+    assert_equal "Octokit/Client/Users.html#user-instance_method", path
+    assert_equal "Octokit/Client/RateLimit.html#rate_limit_remaining-instance_method", another_path
   end
 
   private

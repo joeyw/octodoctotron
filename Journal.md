@@ -205,3 +205,7 @@ multiple endpoints instead of `#user-list` for example thus resulting in
 methods showing up where they don't go. The other major thing is the url to the
 Octokit docs. The octokit docs are generated so it should be fairly easy to do
 some simple parsing to get the same url as yard generates.
+
+The octokit docs url generator is now build and seems to be doing its job. I'll
+know a bit more once I do a more thorough audit going over the api docs but just
+checking a few different places it seems to be doing alright.
