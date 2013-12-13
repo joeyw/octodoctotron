@@ -42,7 +42,7 @@ To run tests run:
 
 	script/test
 
-To build javascript injector files:
+To build run:
 
 	script/build
 
