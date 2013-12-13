@@ -1,5 +1,4 @@
-fuzzy-octo-happiness
-====================
+# octodoctotron
 
 Welcome to this fun experiment in helping those new to Octokit quickly find all
 the GitHub API methods they need to create new projects that change the world.
@@ -11,12 +10,27 @@ methods.
 Octokit is well documented, but the GitHub API docs are sexy and I'd rather look
 through them. Does that make me shallow? Maybe, octobiteme.
 
-## fuzzy-octo-happiness in action
+## octodoctotron in action
 
 ![GitHub API docs before](/build/screenshots/api-docs-before.png?raw=true)
 ![GitHub API docs after](/build/screenshots/api-docs-after.png?raw=true)
 
-## Hacking on fuzzy-octo-happiness
+## Installation
+
+While this is still an experiment, you can install this chrome extension the
+developer way.
+
+Clone down the repo.
+
+Go to [chrome://extensions](chrome://extensions).
+
+Enable developer mode.
+
+Click load unpacked extension, point to `octodoctotron/build/chrome-extension`.
+
+Visit [developer.github.com](http://developer.github.com) and enjoy.
+
+## Hacking on octodoctotron
 
 Ruby 2.0.0 is being used.
 
@@ -28,7 +42,7 @@ To run tests run:
 
 	script/test
 
-To build javascript bookmarklet:
+To build javascript injector files:
 
 	script/build
 

@@ -42,21 +42,22 @@ module OctoExtractor
     # Output
     #
     # => [{
-    #      api_url: "http://developer.github.com/v3/meta/#meta",
+    #      selectors: ["#meta"],
     #      method_name: "meta"
     #    }]
     #
     # @param filepath [String] Path to an Octokit ruby source file.
-    # @return [Array<Hash>] list of relations with :api_url and :method_name.
+    # @return [Array<Hash>] list of relations with :selectors and :method_name.
     def process(filepath)
-      last_url = nil
+      data = []
+      urls = []
       method_name = nil
 
       File.read(filepath).each_line do |line|
         url = line.split(" ")
           .select { |string| string =~ /developer\.github/ }
           .first
-        last_url = url if !url.nil? && !url.empty?
+        urls.push url if !url.nil? && !url.empty? && url.include?("#")
 
         if line.include? "def "
           line_words = line.split(" ")
@@ -64,13 +65,16 @@ module OctoExtractor
           if method_name.include?("(")
             method_name = method_name.split("(")[0]
           end
+
+          if !urls.empty?
+            urls.map! { |url| "##{url.split('#')[1]}" }
+            data.push({ selectors: urls, method_name: method_name })
+          end
+          urls = []
+          method_name = nil
         end
       end
-
-      [{
-        api_url: last_url,
-        method_name: method_name
-      }]
+      data
     end
 
   end
