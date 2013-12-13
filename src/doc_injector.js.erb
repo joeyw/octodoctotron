@@ -1,21 +1,21 @@
 var DocInjector = {
 	init: function() {
-		if (window.location.pathname === "/") return;
-		if (window.location.pathname.slice(0, 9) === "/changes/") return;
-		if (window.location.pathname.slice(0, 8) === "/guides/") return;
-		if (window.location.pathname.slice(0, 11) === "/libraries/") return;
 		var that = this;
-		$.each(this.data, function(i, docReference) {
-			that.inject(docReference)
+		var injected = [];
+		$.each(this.data[window.location.pathname], function(i, docReference) {
+			that.inject(docReference, injected)
 		});
 	},
 	data: <%= @data %>,
-	inject: function(docReference) {
+	inject: function(docReference, injected) {
 		var docBaseUrl = 'http://octokit.github.io/octokit.rb/';
 		var html = '<div><code>Octokit.rb: <a href="' + docBaseUrl + docReference.octokit_doc_url + '" target="_blank">Octokit#' + docReference.method_name + '</a></code></div>';
 		$.each(docReference.selectors, function(i, selector) {
-			$(selector).after(html);
-		})
+			if (injected.indexOf(selector + '-' + docReference.method_name) === -1) {
+				$(selector).after(html);
+				injected.push(selector + '-' + docReference.method_name);
+			}
+		});
 	}
 };
 

@@ -63,6 +63,11 @@ class TestOctoExtractor < Test::Unit::TestCase
     assert_equal "Octokit/Client/RateLimit.html#rate_limit_remaining-instance_method", another_path
   end
 
+  def test_build_extension_data
+    data = OctoExtractor.build_extension_data
+    assert_equal 'emails', data["/v3/users/emails/"].first[:method_name]
+  end
+
   private
 
   def get_source_file(file_name)

@@ -9,11 +9,7 @@ require './lib/octo_extractor'
 
 puts "===> Extracting data from Octokit.rb to build/data.json"
 Proc.new do
-	data = []
-	OctoExtractor.filepaths.each do |filepath|
-		data.concat OctoExtractor.process filepath
-	end
-	File.write "build/data.json", data.to_json
+	File.write "build/data.json", OctoExtractor.build_extension_data.to_json
 end.call
 
 puts "===> Building doc_injector.js"
