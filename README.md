@@ -15,6 +15,17 @@ through them. Does that make me shallow? Maybe, octobiteme.
 ![GitHub API docs before](/build/screenshots/api-docs-before.png?raw=true)
 ![GitHub API docs after](/build/screenshots/api-docs-after.png?raw=true)
 
+## Installation
+
+While this is still an experiment, you can install this chrome extension the
+developer way.
+
+Clone down the repo.
+Go to [chrome://extensions](chrome://extensions).
+Enable developer mode.
+Click load unpacked extension, point to `octodoctotron/build/chrome-extension`.
+Visit [developer.github.com](developer.github.com) and enjoy.
+
 ## Hacking on octodoctotron
 
 Ruby 2.0.0 is being used.
