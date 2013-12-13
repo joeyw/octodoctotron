@@ -1,5 +1,4 @@
-fuzzy-octo-happiness
-====================
+# octodoctotron
 
 Welcome to this fun experiment in helping those new to Octokit quickly find all
 the GitHub API methods they need to create new projects that change the world.
@@ -11,12 +10,12 @@ methods.
 Octokit is well documented, but the GitHub API docs are sexy and I'd rather look
 through them. Does that make me shallow? Maybe, octobiteme.
 
-## fuzzy-octo-happiness in action
+## octodoctotron in action
 
 ![GitHub API docs before](/build/screenshots/api-docs-before.png?raw=true)
 ![GitHub API docs after](/build/screenshots/api-docs-after.png?raw=true)
 
-## Hacking on fuzzy-octo-happiness
+## Hacking on octodoctotron
 
 Ruby 2.0.0 is being used.
 
@@ -28,7 +27,7 @@ To run tests run:
 
 	script/test
 
-To build javascript bookmarklet:
+To build javascript injector files:
 
 	script/build
 
