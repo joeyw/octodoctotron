@@ -10,7 +10,7 @@ module OctoExtractor
     # @return [Array<String>] List of Octokit source ruby filepaths
     def filepaths
       `gem content octokit`.split("\n").
-        select { |filepath| filepath[-3..-1] == ".rb" }
+        select { |fp| fp[-3..-1] == ".rb" && fp.include?('lib/octokit/client') }
     end
 
     # Extract GitHub API documentation links and the methods associated with it
