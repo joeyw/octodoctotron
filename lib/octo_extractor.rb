@@ -1,3 +1,6 @@
+require 'uri'
+require 'json'
+
 module OctoExtractor
   class << self
 
@@ -67,15 +70,46 @@ module OctoExtractor
           end
 
           if !urls.empty?
-            urls.map! { |url| "##{url.split('#')[1]}" }
             data.push({ 
-              selectors: urls, 
+              selectors: urls.map { |url| "##{url.split('#')[1]}" },
               method_name: method_name,
-              octokit_doc_url: octokit_doc_path(filepath, method_name)
+              octokit_doc_url: octokit_doc_path(filepath, method_name),
+              doc_paths: urls.map { |url| URI.parse(url).path }
             })
           end
           urls = []
           method_name = nil
+        end
+      end
+      data
+    end
+
+    # Extract all the method names and urls and package it up nicely into some
+    # json that our chrome extension can use nicely.
+    #
+    # We are going to combine all the data for specific paths into their own
+    # array so the extension doesn't have to parse through all the data
+    # unnessarily only for the methods for a single page. Here is what the
+    # output will look like
+    # 
+    # data = {
+    #   "/v3/repos/": [{
+    #     selectors: ['#list-statuses-for-a-specific-ref'],
+    #     method_name: 'statuses',
+    #     octokit_doc_url: "Octokit/Client/Statuses.html#statuses-instance_method"
+    #   }]
+    # }
+    #
+    # @return data [Hash] API Docs paths, method names and urls
+    def build_extension_data
+      data = {}
+      OctoExtractor.filepaths.each do |filepath|
+        OctoExtractor.process(filepath).each do |entity|
+          paths = entity.delete(:doc_paths)
+          paths.each do |path|
+            data[path] = [] if data[path].nil?
+            data[path].push entity
+          end
         end
       end
       data

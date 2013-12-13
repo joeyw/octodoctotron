@@ -14,7 +14,8 @@ class TestOctoExtractor < Test::Unit::TestCase
     expected_data = [{
       selectors: ['#meta'],
       method_name: 'meta',
-      octokit_doc_url: 'Octokit/Client/Meta.html#meta-instance_method'
+      octokit_doc_url: 'Octokit/Client/Meta.html#meta-instance_method',
+      doc_paths: ['/v3/meta/']
     }]
     data = OctoExtractor.process get_source_file('client/meta.rb')
     assert_equal expected_data, data
@@ -24,11 +25,13 @@ class TestOctoExtractor < Test::Unit::TestCase
     expected_data = [{
       selectors: ['#list-statuses-for-a-specific-ref'],
       method_name: 'statuses',
-      :octokit_doc_url => "Octokit/Client/Statuses.html#statuses-instance_method"
+      octokit_doc_url: "Octokit/Client/Statuses.html#statuses-instance_method",
+      doc_paths: ['/v3/repos/statuses/']
     }, {
       selectors: ['#create-a-status'],
       method_name: 'create_status',
-      :octokit_doc_url => "Octokit/Client/Statuses.html#create_status-instance_method"
+      octokit_doc_url: "Octokit/Client/Statuses.html#create_status-instance_method",
+      doc_paths: ['/v3/repos/statuses/']
     }]
 
     data = OctoExtractor.process get_source_file('client/statuses.rb')
@@ -58,6 +61,11 @@ class TestOctoExtractor < Test::Unit::TestCase
     another_path = OctoExtractor.octokit_doc_path('lib/octokit/client/rate_limit.rb', 'rate_limit_remaining')
     assert_equal "Octokit/Client/Users.html#user-instance_method", path
     assert_equal "Octokit/Client/RateLimit.html#rate_limit_remaining-instance_method", another_path
+  end
+
+  def test_build_extension_data
+    data = OctoExtractor.build_extension_data
+    assert_equal 'emails', data["/v3/users/emails/"].first[:method_name]
   end
 
   private

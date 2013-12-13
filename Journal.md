@@ -209,3 +209,15 @@ some simple parsing to get the same url as yard generates.
 The octokit docs url generator is now build and seems to be doing its job. I'll
 know a bit more once I do a more thorough audit going over the api docs but just
 checking a few different places it seems to be doing alright.
+
+Now I feel the last big thing left (for now) is to make sure we aren't injecting
+method names into places they shouldn't be when the anchor id is generic such as
+`#list` or `get`. Not to worry, I played around with this early on but took it
+out because some things weird injecting properly. So heres the second stab at
+it. Were just going to add the path of the url for each method name which is
+easily grabbed from the url we already have and accessible in the browser.
+
+So close now, the major things I wanted to be ready for intial release are done.
+There is still a minor parser bug that is including method that doesn't relate
+to an actual api method so that will need to be fixed and then I do believe this
+will be ready to be shared with those that will look at it.
