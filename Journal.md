@@ -182,3 +182,12 @@ CHAPTER VIII
 I finally got tired of doing a lot of copy/pasting with the bookmarklet and
 added the necessary files to load the injector as a chrome extension. Now is
 also the time to change the name to octodoctotron. See you on the other side.
+
+CHAPTER IX
+================================================================================
+
+Most methods now show up correctly. Just a couple edge cases left which I am
+working on now. Still need to work out the links back to the octokit docs, will
+work on that after the methods are all showing up correctly. If this never
+experiment never takes off as a reference tool, at least it has forced me to
+update a lot of the octokit docs so the urls work and therefore this extension.
