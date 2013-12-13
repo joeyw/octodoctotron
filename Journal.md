@@ -191,3 +191,17 @@ working on now. Still need to work out the links back to the octokit docs, will
 work on that after the methods are all showing up correctly. If this never
 experiment never takes off as a reference tool, at least it has forced me to
 update a lot of the octokit docs so the urls work and therefore this extension.
+
+With those last parser changes, it looks like all methods are showing up. I just
+finished going over every page of the api docs this morning checking urls. I
+probably should have made these fixes first because now I need to go over them
+again to make sure everything is showing up. But for now I am working from my
+bad memory of which ones I remember were not working due to the multiple url
+issue.
+
+The last two things that I need to fix before first release is checking the path
+on the urls since not all the ids on the docs are unique, some use `#list` for
+multiple endpoints instead of `#user-list` for example thus resulting in
+methods showing up where they don't go. The other major thing is the url to the
+Octokit docs. The octokit docs are generated so it should be fairly easy to do
+some simple parsing to get the same url as yard generates.
