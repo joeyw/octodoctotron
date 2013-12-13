@@ -4,8 +4,8 @@ require 'json'
 module OctoExtractor
   class << self
 
-    # List all the Octokit ruby source filepaths for the latest installed
-    #   version.
+    # List all the Octokit client modules ruby source filepaths for the latest
+    # installed version.
     #
     # @return [Array<String>] List of Octokit source ruby filepaths
     def filepaths
