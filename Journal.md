@@ -216,3 +216,8 @@ method names into places they shouldn't be when the anchor id is generic such as
 out because some things weird injecting properly. So heres the second stab at
 it. Were just going to add the path of the url for each method name which is
 easily grabbed from the url we already have and accessible in the browser.
+
+So close now, the major things I wanted to be ready for intial release are done.
+There is still a minor parser bug that is including method that doesn't relate
+to an actual api method so that will need to be fixed and then I do believe this
+will be ready to be shared with those that will look at it.
