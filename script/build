@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
+system 'script/bootstrap'
+
 require 'json'
 require 'erb'
 require 'uglifier'
 require './lib/octo_extractor'
-
-system 'script/bootstrap'
 
 puts "===> Extracting data from Octokit.rb to build/data.json"
 Proc.new do
