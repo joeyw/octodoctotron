@@ -12,12 +12,12 @@
       ],
       "js": [
         "jquery.js",
-        "doc_injector.js"
+        "inject.js"
       ]
     }
   ],
   "web_accessible_resources": [
     "jquery.js",
-    "doc_injector.js"
+    "inject.js"
   ]
 }

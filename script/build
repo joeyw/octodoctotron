@@ -12,17 +12,12 @@ Proc.new do
 	File.write "build/data.json", OctoExtractor.build_extension_data.to_json
 end.call
 
-puts "===> Building doc_injector.js"
+puts "===> Building inject.js"
 Proc.new do
 	@data = File.read 'build/data.json'
-	template_string = File.read 'src/doc_injector.js.erb'
+	template_string = File.read 'src/inject.js.erb'
 	template = ERB.new template_string
 	doc_injector_src = template.result
-	File.write "build/doc_injector.js", doc_injector_src
-	File.write "build/chrome-extension/doc_injector.js", doc_injector_src
-
-puts "===> Building doc_injector.bookmarklet.js"
-
-	bookmarklet_src = Uglifier.compile doc_injector_src
-	File.write 'build/doc_injector.bookmarklet.js', bookmarklet_src
+	File.write "build/inject.js", doc_injector_src
+	File.write "build/chrome-extension/inject.js", doc_injector_src
 end.call

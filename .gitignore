@@ -1,4 +1,2 @@
 build/data.json
-build/doc_injector.bookmarklet.js
-build/doc_injector.js
-debug*.txt
+build/inject.js
