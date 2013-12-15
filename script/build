@@ -19,5 +19,5 @@ Proc.new do
 	template = ERB.new template_string
 	doc_injector_src = template.result
 	File.write "build/inject.js", doc_injector_src
-	File.write "build/chrome-extension/inject.js", doc_injector_src
+	File.write "build/octodoctotron/inject.js", doc_injector_src
 end.call

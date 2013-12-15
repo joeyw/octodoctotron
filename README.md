@@ -24,7 +24,7 @@ Go to [chrome://extensions](chrome://extensions).
 
 Enable developer mode.
 
-Click load unpacked extension, point to `octodoctotron/build/chrome-extension`.
+Click load unpacked extension, point to `octodoctotron/build/octodoctotron`.
 
 Visit [developer.github.com](http://developer.github.com) and enjoy.
 
