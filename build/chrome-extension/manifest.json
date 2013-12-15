@@ -17,7 +17,7 @@
     }
   ],
   "web_accessible_resources": [
-    "jquery-2.0.3.min.map",
+    "jquery.js",
     "doc_injector.js"
   ]
 }
