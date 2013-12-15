@@ -15,8 +15,13 @@ in action is below as well as how you can install the chrome extension.
 
 ## Installation
 
-While this is still an experiment, you can install this chrome extension the
-developer way.
+The easiest way to get octodoctotron is from the chrome web store: (link
+pending).
+
+You can also download the extension file from the [octodoctotron Releases](
+https://github.com/joeyw/octodoctotron/releases) page.
+
+Lastly you can install the extension unpacked by following these steps:
 
 Clone down the repo.
 
