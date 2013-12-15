@@ -1,6 +1,5 @@
 {
-  "name": "Octokit.rb flavored GitHub API Docs",
-  "short_name": "octodoctotron",
+  "name": "octodoctotron",
   "description": "Add Octokit.rb method names and documentation links to the offical GitHub API docs on developer.github.com.",
   "homepage_url": "https://github.com/joeyw/octodoctotron",
   "manifest_version": 2,
