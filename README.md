@@ -17,7 +17,7 @@ in action is below as well as how you can install the chrome extension.
 
 ### Easy Mode
 
-[Install Octodoctotron from the Chrome Web Stor](https://chrome.google.com/webstore/detail/octodoctotron/aaobeelfoiokkmjgiefcfceabhnpimad?hl=en&gl=US)
+[Install Octodoctotron from the Chrome Web Store](https://chrome.google.com/webstore/detail/octodoctotron/aaobeelfoiokkmjgiefcfceabhnpimad?hl=en&gl=US)
 
 ### Paranoid mode
 
