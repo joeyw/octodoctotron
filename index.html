@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Octodoctotron by joeyw</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Octodoctotron</h1>
+        <p>View Octokit.rb methods on developer.github.com</p>
+
+        <p class="view"><a href="https://github.com/joeyw/octodoctotron">View the Project on GitHub <small>joeyw/octodoctotron</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/joeyw/octodoctotron/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/joeyw/octodoctotron/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/joeyw/octodoctotron">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="octodoctotron" class="anchor" href="#octodoctotron"><span class="octicon octicon-link"></span></a>octodoctotron</h1>
+
+<p>Say hello to your new GitHub API docs Octokit.rb overlord. OctoDoctoTron places
+all your favorite Octokit.rb methods directly into the absolutely beautiful 
+official GitHub API docs, not only do you see the methods for each API endpoint
+but they link directly to their Octokit.rb docs counterpart for quick reference.</p>
+
+<p>This is still an early experiment so try it at your own risk. A sneek peek of it
+in action is below as well as how you can install the chrome extension.</p>
+
+<h2>
+<a name="octodoctotron-in-action" class="anchor" href="#octodoctotron-in-action"><span class="octicon octicon-link"></span></a>octodoctotron in action</h2>
+
+<p><img src="/build/screenshots/api-docs-before.png?raw=true" alt="GitHub API docs before"><img src="/build/screenshots/api-docs-after.png?raw=true" alt="GitHub API docs after"></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a name="easy-mode" class="anchor" href="#easy-mode"><span class="octicon octicon-link"></span></a>Easy Mode</h3>
+
+<p><a href="https://chrome.google.com/webstore/detail/octodoctotron/aaobeelfoiokkmjgiefcfceabhnpimad?hl=en&amp;gl=US">Install Octodoctotron from the Chrome Web Store</a></p>
+
+<h3>
+<a name="paranoid-mode" class="anchor" href="#paranoid-mode"><span class="octicon octicon-link"></span></a>Paranoid mode</h3>
+
+<p>You can also download the extension file from the <a href="https://github.com/joeyw/octodoctotron/releases">octodoctotron Releases</a> page.</p>
+
+<h3>
+<a name="developer-mode" class="anchor" href="#developer-mode"><span class="octicon octicon-link"></span></a>Developer mode</h3>
+
+<p>Lastly you can install the extension unpacked by following these steps:</p>
+
+<p>Clone down the repo.</p>
+
+<p>Go to <a>chrome://extensions</a>.</p>
+
+<p>Enable developer mode.</p>
+
+<p>Click load unpacked extension, point to <code>octodoctotron/build/octodoctotron</code>.</p>
+
+<p>Visit <a href="http://developer.github.com">developer.github.com</a> and enjoy.</p>
+
+<h2>
+<a name="hacking-on-octodoctotron" class="anchor" href="#hacking-on-octodoctotron"><span class="octicon octicon-link"></span></a>Hacking on octodoctotron</h2>
+
+<p>Two parts ruby to one part javascript. The data for octodoctotron is extracted
+directly from the Octokit.rb source code. Ruby 2.0.0 is being used. The javascript
+part is a simple chrome extension that uses the data we extract to inject the
+names of Octokit methods and the links to their docs.</p>
+
+<p>Clone the project then run:</p>
+
+<pre><code>script/bootstrap
+</code></pre>
+
+<p>Tests are included for the ruby parts. They test directly against the code of
+the latest Octokit gem. Run them with:</p>
+
+<pre><code>script/test
+</code></pre>
+
+<p>The build command will extract the doc data from Octokit.rb and compile that
+into the chrome extension. To build simple run:</p>
+
+<pre><code>script/build
+</code></pre>
+
+<h2>
+<a name="how-its-made" class="anchor" href="#how-its-made"><span class="octicon octicon-link"></span></a>How it's made</h2>
+
+<p>I started this project with a <a href="Journal.md">journal</a> to keep track of my thoughts
+and progress. Neat.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/joeyw">joeyw</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
