@@ -107,7 +107,7 @@ module OctoExtractor
         OctoExtractor.process(filepath).each do |entity|
           paths = entity.delete(:doc_paths)
           paths.each do |path|
-            data[path] = [] if data[path].nil?
+            data[path] ||= []
             data[path].push entity
           end
         end
