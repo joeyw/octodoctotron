@@ -10,8 +10,8 @@ in action is below as well as how you can install the chrome extension.
 
 ## octodoctotron in action
 
-![GitHub API docs before](/build/screenshots/api-docs-before.png?raw=true)
-![GitHub API docs after](/build/screenshots/api-docs-after.png?raw=true)
+![GitHub API docs before](build/screenshots/api-docs-before.png?raw=true)
+![GitHub API docs after](build/screenshots/api-docs-after.png?raw=true)
 
 ## Installation
 
