@@ -1,8 +1,8 @@
-require "test/unit"
+require 'minitest/autorun'
 
 require_relative "../lib/octo_extractor"
 
-class TestOctoExtractor < Test::Unit::TestCase
+class TestOctoExtractor < MiniTest::Test
 
   def test_octokit_ruby_source_filepaths
     filepath = OctoExtractor.filepaths.first
